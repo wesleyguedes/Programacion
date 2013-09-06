@@ -1,0 +1,29 @@
+
+#include "stdafx.h"
+#include "conio.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+	int A,B,C,C1,C2,C3,cuenta;
+	cout<< "ingrese el valor del producto: ";
+	cin>> A;
+	cout<< "ingrese la cantidad del producto: ";
+	cin>> C1;
+	cout<< "ingrese el valor del producto: ";
+	cin>> B;
+	cout<< "ingrese la cantidad del producto: ";
+	cin>> C2;
+	cout<< "ingrese el valor del producto: ";
+	cin>> C;
+	cout<< "ingrese la cantidad del producto: ";
+	cin>> C3;
+	cuenta=(A*C1)+(B*C2)+(C*C3);
+	cout<< cuenta;
+	getch();
+	return 0;
+}
