@@ -1,0 +1,25 @@
+// Area Triansulo base Altura.cpp : Defines the entry point for the console application.
+// Autor:Wesley Guedes
+
+#include "stdafx.h"
+#include "conio.h"
+#include "math.h"
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+	int B,H;
+	float area;
+	cout << "ingrese la base ";
+	cin >> B;
+	cout << "ingrese la altura ";
+	cin >> H;
+	area =(H*B)/2;
+	cout << area;
+	getch();
+	return 0;
+}
+
