@@ -1,0 +1,29 @@
+// Nota final upsa.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	float P1,P2,P3,NP,NF,F;
+	cout<< "ingrese Primer Parcial: ";
+	cin>> P1;
+	cout<< "ingrese Segundo Parcial: ";
+	cin>> P2;
+	cout<< "ingrese Tercer Parcial: ";
+	cin>> P3;
+	cout<< "ingrese Nota practica: ";
+	cin>> NP;
+	cout<< "ingrese Final: ";
+	cin>> NF;
+	F=(((P1+P2+P3)/3)*0.4)+(NP*0.2)+(NF*0.4);
+	cout<< F;
+	getch();
+	return 0;
+}
+
