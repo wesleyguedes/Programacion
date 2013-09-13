@@ -1,0 +1,23 @@
+// Interes.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+int main()
+{
+	float k, i, n, I;
+	cout<< "ingrese interes simple: ";
+	cin>> I;
+	cout<< "ingrese el interes anual: ";
+	cin>> i;
+	cout<< "ingrese los dias: ";
+	cin>> n;
+	k = (I/(i/100)*(n/360));
+	cout<< "el capital es: " << k;
+	getch();
+	return 0;
+}
+
