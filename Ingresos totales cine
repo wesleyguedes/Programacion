@@ -1,0 +1,39 @@
+Cine butacas.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{	int I, N, edad;	
+	float precio, S, pago;
+	S=0;
+	cout<<"Ingrese el numero de butacas: ";
+	cin>> N;
+	cout<<"Ingrese el precio: ";
+	cin>> precio;
+	for (I=1;I<=N;I++)
+	{
+	do
+	{
+	cout<<"ingrese edad: ";
+	cin>> edad;
+	}
+	while ((edad<0) || (edad>150));
+	if (edad<=12)
+		pago=precio*0.5;
+	else
+		if (edad<=55)
+			pago=precio;
+		else
+			pago=precio*0.2;
+	S=S+pago;
+	}
+	cout<<"El ingreso total es: "<<S;
+	getch();
+	return 0;
+}
+
