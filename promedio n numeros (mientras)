@@ -1,0 +1,29 @@
+// promedio numeros.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	float N, S, C, datos, prom;
+	
+	cout<< "ingrese la cantidad de datos N: ";
+	cin>> N;
+	S=0;
+	C=0;
+	while(C<N)
+	{
+		cout<<"ingrese los datos: ";
+		cin>> datos;
+		S=S+datos;			
+		C=C+1;
+	}	
+	prom=S/N;
+	cout<<"el promedio es: "<<prom;
+	getch();
+	return 0;
+}
