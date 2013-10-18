@@ -1,0 +1,25 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "math.h"
+#include <iostream>
+
+
+using namespace std;
+
+
+int main()
+{ 
+	float n, mayor;
+	cout<<"ingrese el numero; ";
+	cin>>n;
+	mayor=0;
+	while(n!=0)
+		{
+			if(mayor<n)
+				mayor=n;
+			cin>>n;
+		}
+	cout<<"en mayor numero es: "<<mayor;
+	getch();
+	return 0;
+}
