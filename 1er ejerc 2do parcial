@@ -1,0 +1,31 @@
+// 1er ejerc 2do parcial.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include "math.h"
+#include <iostream>
+
+
+using namespace std;
+
+
+int main()
+{ 
+	float x;
+	int n, i, s, sig;
+	cout<<"ingrese el N: ";
+	cin>>n;
+	cout<<"ingrese x: ";
+	cin>>x;
+	s=7;
+	sig=1;
+	for(i=1;i<=n;i++)
+		{s = s + (sig*(pow(x,(2*i+1))))/((2*i)+2);
+		sig=sig*(-1);
+		}
+	cout<<"la suma es: "<<s;
+	getch();
+	return 0;
+}
+
