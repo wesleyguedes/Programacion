@@ -12,19 +12,18 @@ using namespace std;
 
 int main()
 { 
-	int n, digito, numero, cont;
-	cout<<"ingrese el numero: ";
-	cin>>n;
-	while(n>0)
-		{
-			digito=n%10;
-			n=n/10;
-			{if(digito%2 != 0)
-				cont=cont+1;
-			cout<<"el digito es : "<<digito;}
-		}
-	cout<<"el numero de numero impares es: "<<cont;
-	getch();
-	return 0;
+	 int n, digito, numero, cont=0;
+        cout<<"ingrese el numero: ";
+        cin>>n;
+        while(n>0)
+                {
+                        digito=n%10;
+                        n=n/10;
+                        {if(digito%2 != 0)
+                                cont=cont+1;
+                        cout<<"el digito es : "<<digito;}
+                }
+        cout<<"el numero de numero impares es: "<<cont;
+        getch();
+        return 0;
 }
-
