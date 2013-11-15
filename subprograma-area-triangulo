@@ -1,0 +1,35 @@
+// area triangulo.subprograma.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+
+float area (int b, int h);
+
+
+int main ()
+{
+	int N, base, altura, atriangulo;
+	cout<<"ingrese el umero de triangulos: ";
+	cin>>N;
+	for(int i=1;i<=N;i++)
+		{	cout<<"ingrese la base: ";
+			cin>>base;
+			cout<<"ingrese la altura: ";
+			cin>>altura;
+			atriangulo=area(base,altura);
+			cout<<"el area del triangulo: "<<i<<"es: "<<atriangulo;
+		}	
+	getch ();
+	return 0;
+}
+
+float area (int b, int h)
+{int atriangulo;
+	atriangulo=(base*altura)/2;
+	return (atriangulo);
+}
+
