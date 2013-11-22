@@ -1,0 +1,51 @@
+// capicua.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+
+long invertir( long a );
+
+int main()
+{
+	int N, i, cnt;
+   long A, B;
+
+   cout<<"ingrese el numero entero N: ";
+   cin >> N;
+   for( i=0; i<N; i++ )
+   {
+	   cout<<"ingrese el numero: ";
+      cin >> A;
+      cnt = 0;
+      while( cnt < 100 )
+      {
+         B = invertir( A );
+         if( A == B )
+         {
+			 cout<<"el numero es: " << A << endl;
+            break;
+         } else
+            A = A + B;
+         cnt ++;
+      }
+      if( cnt == 100 )
+         cout << "imposible" << endl;
+   }
+
+	return 0;
+}
+
+long invertir( long a )
+{
+   long aux = 0;
+   while( a > 0 )
+   {
+      aux = aux*10 + a%10;
+      a = a / 10;
+   }
+   return aux;
+}
