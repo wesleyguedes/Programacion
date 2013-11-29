@@ -1,0 +1,26 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+int main()
+{
+   int N, i, j, cnt;
+   string a, b;
+
+   cin >> N;
+   for( i=0; i<N; i++ )
+   {
+      cin >> a >> b;
+      cnt = 0;
+      for( j=0; j<a.length(); j++ )
+      {
+         if( a[j] != b[j] )
+            cnt ++;
+      }
+      cout << cnt << endl;
+   }
+   return 0;
+}
