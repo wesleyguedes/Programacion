@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int area_cuadrado (int L);
+int main ()
+{
+        int L,area;
+        cout<<"ingrese el lado";
+        cin>>L;
+        area=area_cuadrado(L);
+        cout<<"area es";
+        cout<<area;
+        getch ();
+        return 0;
+
+}
+int area_cuadrado (int L)
+{ int area;
+   area=L*L;
+   
+  return area;
+}
