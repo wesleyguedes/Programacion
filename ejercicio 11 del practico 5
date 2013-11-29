@@ -1,0 +1,56 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h" 
+
+using namespace std; 
+int main()
+
+
+{   
+        int op;
+        float c,a,l,o,pi,r,b,h;
+         do
+    {
+                cout<<"1.area del cuadrado";
+                cout<<"2.area del circulo";
+                cout<<"3.area del triangulo";
+                cout<<"0.salir";
+                cin>>o;
+          
+                switch (op)
+                case 1:
+        cout<<"ingrese los lados";
+                cin>>l;
+                a=l*l;
+                cout<<"l";
+        
+                 break;
+                 case 2:
+                         cout<<"ingrese el area";
+                         cin>>a;
+                         r=sqrt(3.14/a);
+                         cout<<"r";
+                 break;
+                 case 3:
+                         cout<<"ingrese la base";
+                         cin>>b;
+                         cout<<"ingrese la altura";
+                         cin>>h;
+                         a=(b*h)/2;
+             cout<<"a";
+
+                          break;
+        case 0:
+        cout "Gracias por usar el sistema";
+        break;
+        default
+        cout << "Error";
+    }
+        while (op!=0);
+    
+        
+           getch();
+        
+           return 0;
+}
