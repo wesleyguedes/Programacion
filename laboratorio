@@ -1,0 +1,107 @@
+// funviones I.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <conio.h>
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+int obtCantDigitos(int n);
+int invertir(int n);
+int eliminarPares(int n);
+int reemplazarDigito(int n, int dig);
+int main()
+{
+	int nro, r, opcion, dig;
+	cout<<"introducir el numero: ";
+	cin>>nro;
+
+	do{
+		cout << endl << "\n]***MENU***";
+		cout << endl << "=============";
+		cout << endl << "1.- cantidad de digitos";
+		cout << endl << "2.- invertir";
+		cout << endl << "3.- eliminar digitos pares";
+		cout << endl << "4.- reemplazar digitos por zero";
+		cout << endl << "0.- salir";
+		cout << endl << "seleccionar una opcion";
+		cin>>opcion;
+		switch(opcion){
+			
+			case 1 : r=obtCantDigitos(nro);
+				cout<<"La cantidad de digitos de"<<nro<<"es: "<<r;
+				break;
+
+			case 2 : r=invertir(nro);
+				cout<<"el"<<nro<<"invertido es: "<<r;
+				break;
+
+			case 3 : r=eliminarPares(nro);
+				cout<<"el numero "<<nro<<" sin digitos pares es :"<<r;
+				break;
+
+			case 4 : cout<<"introducir un numero natural de un digito: ";
+					 cin>>dig;
+				r=reemplazarDigito(nro, dig);
+				cout<<"el numero "<<nro<<" reemplazado digitos es: "<<r;
+				break;
+	}
+	}while(opcion != 0);
+return(1);
+}
+
+int obtCantDigitos(int n)
+{int c=0;
+while(n>0)
+{n=n/10;
+c++;
+}
+return (c);
+}
+
+int invertir(int n)
+{int nuro=0,d;
+while(n>0)
+{d=n%10;
+nuro=(nuro*10) + d;
+n=n/10;
+}
+return(nuro);
+}
+
+int eliminarPares(int n)
+{int nro=0, d;
+while(n>0)
+{d=n%10;
+if(d%2 != 0)
+{nro=nro*10 + d;
+}
+n=n/10;
+}
+return(invertir(nro));
+}
+
+int reemplazarDigito(int n, int dig)
+{int nro=0, d, n1, d1, c=0;
+d1=n%10;
+if(d1==dig)
+	{n1=n;
+	while((n1>0)&&(d1==dig))
+	{d1=n1%10;
+	c++;
+	}
+	n1=n1/10;
+}
+while(n>0)
+{d=n%10;
+if(d==dig)
+{d=0;
+}
+nro=nro*10 + d;
+n=n/10;
+}
+nro=invertir(nro);
+nro=nro*powf(10,c);
+return(nro);
+}
