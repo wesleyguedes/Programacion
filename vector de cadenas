@@ -1,0 +1,46 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string.h>
+
+using namespace std;
+
+struct tipoX{
+	char cad1[15];
+	char cad2[15];
+	char cad3[15];
+	char cad4[15];
+};
+
+void cargar(tipoX vec[],int n){
+	int i;
+
+	for(i=0;i<n;i++){
+			cout << "introducir el cadena: ";
+			do{
+				gets(vec[i].cad1);
+			}while(strlen(vec[i].cad1) == 0);
+			vec[i].cad2[0] = '\0';
+			vec[i].cad3[0] = '\0';
+			vec[i].cad4[0] = '\0';
+	}
+}
+
+void mostrar(tipoX vec[], int n){
+	int i;
+	cout <<endl<<endl<<"los datos son : ";
+	for(i=0;i<n;i++){
+		cout <<endl<<vec[i].cad1<<" "<<vec[i].cad2<<" "<<vec[i].cad3<<" "<<vec[i].cad4;
+	}
+}
+
+
+int main(){
+	tipoX vectorDeCadenas[20];
+	int nroElem;
+	cout << "introducir nro de elementos : ";
+	cin >> nroElem;
+	cargar(vectorDeCadenas,nroElem);
+	getch();
+	return (1);
+}
