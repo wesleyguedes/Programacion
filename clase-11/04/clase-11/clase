@@ -1,0 +1,107 @@
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+#include <conio.h>
+
+using namespace std;
+
+#define NFIL 10
+#define NCOL 10
+
+struct elemMat{
+	int vec[NFIL];
+};
+
+void cargar(elemMat mat[NFIL][NCOL], int fil, int col){
+	int i, j, k;
+	for(i=0;i<fil;i++){
+		for(j=0;j<col;j++){
+			for(k=0;k<col;k++){
+				cout<<"introducir mat["<<i<<","<<j<<","<<k<<"] : ";
+				cin>> mat[i][j].vec[k];
+			}
+		}
+	}
+}
+void mostrar(elemMat mat[NFIL][NCOL], int fil, int col){
+	int i, j, k;
+	cout<< endl << "la matriz de vectores es : " <<endl;
+	for(i=0;i<fil;i++){
+		for(j=0;j<col;j++){
+			for(k=0;k<col;k++){
+				cout<< setw(3)<< mat[i][j].vec[k];
+			}
+			cout << "  ";
+		}
+		cout << endl;
+	}
+}
+
+void intercambiar(elemMat mat[NFIL][NCOL], int fil, int col){
+	int i,j;
+	elemMat aux;
+	for(i=0;i<fil;i++){
+		for(j=0;j<col;j++){
+			if(i<j){
+				aux = mat[i][j];
+				mat[i][j] = mat[j][i];
+				mat[j][i] = aux;
+			}
+		}
+	}
+}
+
+void mostrarVector(elemMat vect[],int n){
+	int i, j;
+	cout<< endl <<"el vector de vectores es: " << endl;
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			cout<< setw(3)<< vec[i].vec[j];
+			}
+			cout << endl;
+		}
+}
+
+bool verifSiVectorAsc(int vec[], int n){
+	int i,j;
+	bool k=true;
+		for(i=0;i<n-1;i++){
+			for(j=i+1;j<n;j++){
+				if(vec[i] > vec[j]){
+					k = false;
+				}
+			}
+		}
+		return(k);
+}
+	
+
+void obtVectSumaVecOrdeAsc(elemMat mat[NFIL][NCOL], int fil, int col, elemMat vect[]){
+	int i,j,k;
+
+	for(i=0;i<fil;i++){
+		for(j=0;j<col;j++){
+			vect[i].vec[j] = 0;
+			if(verifSiVectorAsc(mat[i][j].vec,fil) == true){
+				for(k=0;k<col;k++){
+					vect[i].vec[j] = vect[i].vec[j] + mat[i][j].vec[k];
+				}
+			}
+		}
+	}
+}
+
+int main(){
+	elemMat matriz[NFIL][NCOL];
+	int n;
+	cout << "introducir Nro de filas = columna : ";
+	cin >> n;
+	cargar(matriz,n,n);
+	mostrar(matriz,n,n);
+	intercambiar(matriz,n,n);
+	mostrar(matriz,n,n);
+	obtVectSumaVecOrdeAsc(matriz,n,n,vect);
+	mostrarVector(vect,n);
+	getch();
+	return(1);
+}
